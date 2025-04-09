@@ -1,0 +1,278 @@
+Sever Max Threads: 192
+Sever Procs Num: 192
+Testing with threads: 24
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 389740 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16667
+               Y|               N|           16232
+               N|               Y|           16536
+               N|               N|           16315
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16667
+               Y|               N|           16232
+               N|               Y|           16536
+               N|               N|           16315
+
+
+
+
+Testing with threads: 48
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 305075 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16456
+               Y|               N|           16820
+               N|               Y|           16359
+               N|               N|           15691
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16456
+               Y|               N|           16820
+               N|               Y|           16359
+               N|               N|           15691
+
+
+
+
+Testing with threads: 72
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 273317 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16872
+               Y|               N|           16349
+               N|               Y|           15983
+               N|               N|           16688
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16872
+               Y|               N|           16349
+               N|               Y|           15983
+               N|               N|           16688
+
+
+
+
+Testing with threads: 96
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 251561 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16800
+               Y|               N|           16446
+               N|               Y|           16372
+               N|               N|           16022
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16800
+               Y|               N|           16446
+               N|               Y|           16372
+               N|               N|           16022
+
+
+
+
+Testing with threads: 120
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.8
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 250765 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           15750
+               Y|               N|           16735
+               N|               Y|           15778
+               N|               N|           16034
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           15750
+               Y|               N|           16735
+               N|               Y|           15778
+               N|               N|           16034
+
+
+
+
+Testing with threads: 144
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 241038 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16038
+               Y|               N|           16426
+               N|               Y|           16517
+               N|               N|           16587
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16038
+               Y|               N|           16426
+               N|               Y|           16517
+               N|               N|           16587
+
+
+
+
+Testing with threads: 168
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.8
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 234256 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16153
+               Y|               N|           17181
+               N|               Y|           15771
+               N|               N|           15795
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16153
+               Y|               N|           17181
+               N|               Y|           15771
+               N|               N|           15795
+
+
+
+
+Testing with threads: 192
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 243913 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16735
+               Y|               N|           16442
+               N|               Y|           16200
+               N|               N|           16278
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16735
+               Y|               N|           16442
+               N|               Y|           16200
+               N|               N|           16278
+
+
+
+
+
+Performance Results (time in ms):
+ Threads |  Filtering | Conversion | Aggregation
+--------------------------------------------------
+      24 |     208028 |     181194 |        518
+--------------------------------------------------
+      48 |     111243 |     193284 |        548
+--------------------------------------------------
+      72 |      90313 |     182500 |        504
+--------------------------------------------------
+      96 |      87048 |     164019 |        494
+--------------------------------------------------
+     120 |      77635 |     172608 |        522
+--------------------------------------------------
+     144 |      73309 |     167229 |        500
+--------------------------------------------------
+     168 |      65464 |     168292 |        500
+--------------------------------------------------
+     192 |      70092 |     173317 |        504
+--------------------------------------------------

@@ -1,0 +1,1572 @@
+Testing with size 2^0 (1)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000003 ~ 2^-18.6
+Repack YN average error = 0.000000 ~ 2^-29.7
+Repack NY average error = 0.000000 ~ 2^-28.4
+Repack NN average error = 0.000000 ~ 2^-27.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 24159 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               5
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               5
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 6052 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering finish
+Query Evaluation Time: 265 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.9
+Repack average error = 0.000000 ~ 2^-27.4
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 11928 ms
+Encrypted query result: 
+promo_revenue
+    0.708151
+Plain query result: 
+promo_revenue
+        -nan
+
+
+
+
+Testing with size 2^1 (2)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-29.4
+Repack YN average error = 0.000000 ~ 2^-29.0
+Repack NY average error = 0.000000 ~ 2^-29.0
+Repack NN average error = 0.000000 ~ 2^-28.8
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 23413 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               0
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               0
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.5
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 5984 ms
+Encrypted query result: 
+     revenue
+           0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering finish
+Query Evaluation Time: 296 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.9
+Repack average error = 0.000000 ~ 2^-27.3
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 11614 ms
+Encrypted query result: 
+promo_revenue
+    0.582584
+Plain query result: 
+promo_revenue
+        -nan
+
+
+
+
+Testing with size 2^2 (4)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000003 ~ 2^-18.6
+Repack YN average error = 0.000000 ~ 2^-26.6
+Repack NY average error = 0.000000 ~ 2^-26.4
+Repack NN average error = 0.000000 ~ 2^-26.2
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 23372 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              12
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              12
+               Y|               N|               0
+               N|               Y|               0
+               N|               N|               0
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 5925 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering finish
+Query Evaluation Time: 288 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000001 ~ 2^-20.6
+Repack average error = 0.000001 ~ 2^-19.7
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 11639 ms
+Encrypted query result: 
+promo_revenue
+     0.12676
+Plain query result: 
+promo_revenue
+    0.126761
+
+
+
+
+Testing with size 2^3 (8)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-22.2
+Repack YN average error = 0.000000 ~ 2^-21.4
+Repack NY average error = 0.000000 ~ 2^-21.1
+Repack NN average error = 0.000001 ~ 2^-20.6
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 25119 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              10
+               Y|               N|              11
+               N|               Y|               7
+               N|               N|               0
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              10
+               Y|               N|              11
+               N|               Y|               7
+               N|               N|               0
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.5
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 6419 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering finish
+Query Evaluation Time: 292 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.4
+Repack average error = 0.000000 ~ 2^-26.6
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 12522 ms
+Encrypted query result: 
+promo_revenue
+    0.869434
+Plain query result: 
+promo_revenue
+        -nan
+
+
+
+
+Testing with size 2^4 (16)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.8
+Repack YN average error = 0.000000 ~ 2^-22.5
+Repack NY average error = 0.000000 ~ 2^-21.6
+Repack NN average error = 0.000000 ~ 2^-27.9
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 25607 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               5
+               Y|               N|               8
+               N|               Y|               7
+               N|               N|              -0
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|               5
+               Y|               N|               8
+               N|               Y|               7
+               N|               N|               0
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.1
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 6686 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering finish
+Query Evaluation Time: 317 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-28.5
+Repack average error = 0.000000 ~ 2^-27.5
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 12892 ms
+Encrypted query result: 
+promo_revenue
+     1.08602
+Plain query result: 
+promo_revenue
+        -nan
+
+
+
+
+Testing with size 2^5 (32)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.5
+Repack YN average error = 0.000000 ~ 2^-21.5
+Repack NY average error = 0.000000 ~ 2^-22.3
+Repack NN average error = 0.000000 ~ 2^-22.4
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 30421 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              22
+               Y|               N|              31
+               N|               Y|              15
+               N|               N|               3
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              22
+               Y|               N|              31
+               N|               Y|              15
+               N|               N|               3
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.4
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 7851 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering finish
+Query Evaluation Time: 294 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-21.3
+Repack average error = 0.000000 ~ 2^-23.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 15209 ms
+Encrypted query result: 
+promo_revenue
+    0.406394
+Plain query result: 
+promo_revenue
+    0.406393
+
+
+
+
+Testing with size 2^6 (64)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-22.1
+Repack YN average error = 0.000000 ~ 2^-21.9
+Repack NY average error = 0.000000 ~ 2^-22.6
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 32360 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              34
+               Y|               N|              24
+               N|               Y|              14
+               N|               N|              41
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              34
+               Y|               N|              24
+               N|               Y|              14
+               N|               N|              41
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.4
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 8470 ms
+Encrypted query result: 
+     revenue
+           0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering finish
+Query Evaluation Time: 595 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               0
+        SHIP|               0|               0
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.3
+Repack average error = 0.000000 ~ 2^-23.8
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 16498 ms
+Encrypted query result: 
+promo_revenue
+    0.519737
+Plain query result: 
+promo_revenue
+    0.519737
+
+
+
+
+Testing with size 2^7 (128)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.3
+Repack YN average error = 0.000000 ~ 2^-22.1
+Repack NY average error = 0.000000 ~ 2^-22.2
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 44150 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              79
+               Y|               N|              38
+               N|               Y|              61
+               N|               N|              48
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|              79
+               Y|               N|              38
+               N|               Y|              61
+               N|               N|              48
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.6
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 11385 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering finish
+Query Evaluation Time: 888 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               2|               1
+        SHIP|               0|               1
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               2|               1
+        SHIP|               0|               1
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.1
+Repack average error = 0.000000 ~ 2^-25.2
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 23240 ms
+Encrypted query result: 
+promo_revenue
+    0.999996
+Plain query result: 
+promo_revenue
+           1
+
+
+
+
+Testing with size 2^8 (256)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-22.1
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.4
+Repack NN average error = 0.000000 ~ 2^-21.5
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 58150 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             124
+               Y|               N|             131
+               N|               Y|             161
+               N|               N|             184
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             124
+               Y|               N|             131
+               N|               Y|             161
+               N|               N|             184
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.3
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 15058 ms
+Encrypted query result: 
+     revenue
+           0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering finish
+Query Evaluation Time: 1947 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               1
+        SHIP|               0|               2
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               1
+        SHIP|               0|               2
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-22.6
+Repack average error = 0.000000 ~ 2^-24.6
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 29239 ms
+Encrypted query result: 
+promo_revenue
+    0.326984
+Plain query result: 
+promo_revenue
+    0.326984
+
+
+
+
+Testing with size 2^9 (512)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.8
+Repack YN average error = 0.000000 ~ 2^-21.8
+Repack NY average error = 0.000000 ~ 2^-21.8
+Repack NN average error = 0.000000 ~ 2^-21.5
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 112204 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             262
+               Y|               N|             250
+               N|               Y|             263
+               N|               N|             267
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             262
+               Y|               N|             250
+               N|               Y|             263
+               N|               N|             267
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.2
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 30771 ms
+Encrypted query result: 
+     revenue
+          93
+Plain query result: 
+     revenue
+          93
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering finish
+Query Evaluation Time: 3196 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               2
+        SHIP|               3|               4
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               0|               2
+        SHIP|               3|               4
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-24.2
+Repack average error = 0.000000 ~ 2^-24.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 57766 ms
+Encrypted query result: 
+promo_revenue
+     0.52722
+Plain query result: 
+promo_revenue
+    0.527221
+
+
+
+
+Testing with size 2^10 (1024)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-22.0
+Repack YN average error = 0.000000 ~ 2^-21.5
+Repack NY average error = 0.000000 ~ 2^-21.6
+Repack NN average error = 0.000000 ~ 2^-21.8
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 136344 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             424
+               Y|               N|             630
+               N|               Y|             521
+               N|               N|             498
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             424
+               Y|               N|             630
+               N|               Y|             521
+               N|               N|             498
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.4
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 36769 ms
+Encrypted query result: 
+     revenue
+          -0
+Plain query result: 
+     revenue
+           0
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering finish
+Query Evaluation Time: 6856 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               3|               3
+        SHIP|               3|               5
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|               3|               3
+        SHIP|               3|               5
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.6
+Repack average error = 0.000000 ~ 2^-24.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 68914 ms
+Encrypted query result: 
+promo_revenue
+    0.458557
+Plain query result: 
+promo_revenue
+    0.458557
+
+
+
+
+Testing with size 2^11 (2048)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.6
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 138647 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             990
+               Y|               N|            1126
+               N|               Y|             938
+               N|               N|            1050
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|             990
+               Y|               N|            1126
+               N|               Y|             938
+               N|               N|            1050
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.2
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 39766 ms
+Encrypted query result: 
+     revenue
+         409
+Plain query result: 
+     revenue
+         409
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering finish
+Query Evaluation Time: 12126 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              10|               4
+        SHIP|               6|               7
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              10|               4
+        SHIP|               6|               7
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.4
+Repack average error = 0.000000 ~ 2^-24.8
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 70533 ms
+Encrypted query result: 
+promo_revenue
+    0.295798
+Plain query result: 
+promo_revenue
+    0.295798
+
+
+
+
+Testing with size 2^12 (4096)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.6
+Repack YN average error = 0.000000 ~ 2^-21.6
+Repack NY average error = 0.000000 ~ 2^-21.6
+Repack NN average error = 0.000000 ~ 2^-21.6
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 145731 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            2080
+               Y|               N|            2043
+               N|               Y|            2049
+               N|               N|            2146
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            2080
+               Y|               N|            2043
+               N|               Y|            2049
+               N|               N|            2146
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.9
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 43333 ms
+Encrypted query result: 
+     revenue
+         235
+Plain query result: 
+     revenue
+         235
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering finish
+Query Evaluation Time: 24776 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              20|              19
+        SHIP|              11|              23
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              20|              19
+        SHIP|              11|              23
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.5
+Repack average error = 0.000000 ~ 2^-24.8
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 72465 ms
+Encrypted query result: 
+promo_revenue
+    0.399823
+Plain query result: 
+promo_revenue
+    0.399823
+
+
+
+
+Testing with size 2^13 (8192)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.6
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 156096 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            3865
+               Y|               N|            4155
+               N|               Y|            3995
+               N|               N|            4363
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            3865
+               Y|               N|            4155
+               N|               Y|            3995
+               N|               N|            4363
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.5
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 52270 ms
+Encrypted query result: 
+     revenue
+         813
+Plain query result: 
+     revenue
+         813
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering finish
+Query Evaluation Time: 48931 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              26|              35
+        SHIP|              20|              42
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              26|              35
+        SHIP|              20|              42
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.6
+Repack average error = 0.000000 ~ 2^-24.8
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 77014 ms
+Encrypted query result: 
+promo_revenue
+    0.356012
+Plain query result: 
+promo_revenue
+    0.356012
+
+
+
+
+Testing with size 2^14 (16384)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 179872 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            8308
+               Y|               N|            8078
+               N|               Y|            8179
+               N|               N|            8076
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|            8308
+               Y|               N|            8078
+               N|               Y|            8179
+               N|               N|            8076
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-27.0
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 71542 ms
+Encrypted query result: 
+     revenue
+         915
+Plain query result: 
+     revenue
+         915
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering finish
+Query Evaluation Time: 95326 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              51|              89
+        SHIP|              45|              80
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|              51|              89
+        SHIP|              45|              80
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.4
+Repack average error = 0.000000 ~ 2^-24.3
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 90297 ms
+Encrypted query result: 
+promo_revenue
+    0.482835
+Plain query result: 
+promo_revenue
+    0.482835
+
+
+
+
+Testing with size 2^15 (32768)
+Relational SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack YY average error = 0.000000 ~ 2^-21.7
+Repack YN average error = 0.000000 ~ 2^-21.7
+Repack NY average error = 0.000000 ~ 2^-21.7
+Repack NN average error = 0.000000 ~ 2^-21.7
+Aggregating quanlity, Taking SUM(quantlity) as an example..
+--------------------------------------------------------
+Query Evaluation Time: 232172 ms
+Encrypted query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16331
+               Y|               N|           16515
+               N|               Y|           16479
+               N|               N|           15938
+Plain query result: 
+      returnfalg|      linestatus|         sum_qty
+               Y|               Y|           16331
+               Y|               N|           16515
+               N|               Y|           16479
+               N|               N|           15938
+
+
+
+
+Relational SQL Query6 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.6
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 109239 ms
+Encrypted query result: 
+     revenue
+        3277
+Plain query result: 
+     revenue
+        3277
+
+
+
+
+Relational SQL Query12 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Query Evaluation Time: 188478 ms
+Encrypted result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|             109|             134
+        SHIP|             109|             159
+Plain result: 
+    shipmode| high_line_count|  low_line_count
+        MAIL|             109|             134
+        SHIP|             109|             159
+
+
+
+
+Relational SQL Query14 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-23.4
+Repack average error = 0.000000 ~ 2^-24.8
+Aggregating price and discount ..
+Remian modulus: 2
+Query Evaluation Time: 115664 ms
+Encrypted query result: 
+promo_revenue
+    0.345391
+Plain query result: 
+promo_revenue
+    0.345391
+
+
+
+
+
+Performance Results (time in ms):
+    Size |    Operation |    Query 1 |    Query 6 |   Query 12 |   Query 14
+--------------------------------------------------------------------------------
+       1 |    Filtering |        238 |        115 |        265 |         76
+         |   Conversion |      23834 |       5893 |          0 |      11795
+         |  Aggregation |         87 |         44 |          0 |         57
+--------------------------------------------------------------------------------
+       2 |    Filtering |        235 |        125 |        296 |         84
+         |   Conversion |      23063 |       5808 |          0 |      11459
+         |  Aggregation |        115 |         51 |          0 |         71
+--------------------------------------------------------------------------------
+       4 |    Filtering |        230 |        123 |        288 |         84
+         |   Conversion |      23003 |       5744 |          0 |      11471
+         |  Aggregation |        139 |         58 |          0 |         84
+--------------------------------------------------------------------------------
+       8 |    Filtering |        230 |        128 |        292 |         91
+         |   Conversion |      24723 |       6226 |          0 |      12333
+         |  Aggregation |        166 |         65 |          0 |         98
+--------------------------------------------------------------------------------
+      16 |    Filtering |        231 |        127 |        317 |         97
+         |   Conversion |      25155 |       6488 |          0 |      12677
+         |  Aggregation |        221 |         71 |          0 |        118
+--------------------------------------------------------------------------------
+      32 |    Filtering |        233 |        128 |        294 |        100
+         |   Conversion |      29962 |       7645 |          0 |      14982
+         |  Aggregation |        226 |         78 |          0 |        127
+--------------------------------------------------------------------------------
+      64 |    Filtering |        349 |        263 |        595 |        190
+         |   Conversion |      31757 |       8121 |          0 |      16166
+         |  Aggregation |        254 |         86 |          0 |        142
+--------------------------------------------------------------------------------
+     128 |    Filtering |        513 |        388 |        888 |        269
+         |   Conversion |      43352 |      10902 |          0 |      22814
+         |  Aggregation |        285 |         95 |          0 |        157
+--------------------------------------------------------------------------------
+     256 |    Filtering |        999 |        752 |       1947 |        688
+         |   Conversion |      56838 |      14201 |          0 |      28377
+         |  Aggregation |        313 |        105 |          0 |        174
+--------------------------------------------------------------------------------
+     512 |    Filtering |       1812 |       1376 |       3196 |       1120
+         |   Conversion |     110056 |      29282 |          0 |      56462
+         |  Aggregation |        336 |        113 |          0 |        184
+--------------------------------------------------------------------------------
+    1024 |    Filtering |       3703 |       2941 |       6856 |       2153
+         |   Conversion |     132253 |      33706 |          0 |      66554
+         |  Aggregation |        388 |        122 |          0 |        207
+--------------------------------------------------------------------------------
+    2048 |    Filtering |       7719 |       5486 |      12126 |       3899
+         |   Conversion |     130526 |      34151 |          0 |      66394
+         |  Aggregation |        402 |        129 |          0 |        240
+--------------------------------------------------------------------------------
+    4096 |    Filtering |      13254 |      10741 |      24776 |       7316
+         |   Conversion |     132057 |      32458 |          0 |      64920
+         |  Aggregation |        420 |        134 |          0 |        229
+--------------------------------------------------------------------------------
+    8192 |    Filtering |      26920 |      19719 |      48931 |      13459
+         |   Conversion |     128728 |      32410 |          0 |      63311
+         |  Aggregation |        448 |        141 |          0 |        244
+--------------------------------------------------------------------------------
+   16384 |    Filtering |      52085 |      39050 |      95326 |      26280
+         |   Conversion |     127319 |      32347 |          0 |      63768
+         |  Aggregation |        468 |        145 |          0 |        249
+--------------------------------------------------------------------------------
+   32768 |    Filtering |     104355 |      77299 |     188478 |      51579
+         |   Conversion |     127332 |      31796 |          0 |      63822
+         |  Aggregation |        485 |        144 |          0 |        263
+--------------------------------------------------------------------------------

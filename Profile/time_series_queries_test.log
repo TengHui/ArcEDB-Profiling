@@ -1,0 +1,1044 @@
+Testing with size 2^0 (1)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering time: 249 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 249 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering time: 169 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 169 ms
+Decrypt result: 0
+Plain result: 0
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering time: 164 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 164 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 1
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000001 ~ 2^-20.7
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 950
+Encrypted query result: 950
+Filtering time: 185 ms
+Conversion time: 6354 ms
+Aggregation time: 44 ms
+Total time: 6583 ms
+
+
+
+
+Testing with size 2^1 (2)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering time: 335 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 335 ms
+Decrypt result: 2
+Plain result: 2
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering time: 154 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 154 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering time: 135 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 135 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 2
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-21.1
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 775
+Encrypted query result: 775
+Filtering time: 181 ms
+Conversion time: 6262 ms
+Aggregation time: 52 ms
+Total time: 6495 ms
+
+
+
+
+Testing with size 2^2 (4)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering time: 332 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 332 ms
+Decrypt result: 4
+Plain result: 4
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering time: 134 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 134 ms
+Decrypt result: 2
+Plain result: 2
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering time: 133 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 133 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 4
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000001 ~ 2^-20.8
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 786
+Encrypted query result: 786
+Filtering time: 177 ms
+Conversion time: 6167 ms
+Aggregation time: 60 ms
+Total time: 6404 ms
+
+
+
+
+Testing with size 2^3 (8)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering time: 328 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 328 ms
+Decrypt result: 8
+Plain result: 8
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering time: 132 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 132 ms
+Decrypt result: 4
+Plain result: 4
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering time: 132 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 132 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 8
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-22.3
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 426
+Encrypted query result: 426
+Filtering time: 176 ms
+Conversion time: 6671 ms
+Aggregation time: 67 ms
+Total time: 6914 ms
+
+
+
+
+Testing with size 2^4 (16)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering time: 326 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 326 ms
+Decrypt result: 16
+Plain result: 16
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering time: 131 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 131 ms
+Decrypt result: 6
+Plain result: 6
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering time: 132 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 132 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 16
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-22.7
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 390
+Encrypted query result: 390
+Filtering time: 191 ms
+Conversion time: 6767 ms
+Aggregation time: 73 ms
+Total time: 7031 ms
+
+
+
+
+Testing with size 2^5 (32)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering time: 330 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 330 ms
+Decrypt result: 32
+Plain result: 32
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering time: 426 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 426 ms
+Decrypt result: 16
+Plain result: 16
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering time: 145 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 145 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 32
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.8
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 252
+Encrypted query result: 252
+Filtering time: 386 ms
+Conversion time: 7989 ms
+Aggregation time: 80 ms
+Total time: 8455 ms
+
+
+
+
+Testing with size 2^6 (64)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering time: 582 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 582 ms
+Decrypt result: 64
+Plain result: 64
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering time: 673 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 673 ms
+Decrypt result: 32
+Plain result: 32
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering time: 261 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 261 ms
+Decrypt result: 1
+Plain result: 1
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 64
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.3
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 263
+Encrypted query result: 263
+Filtering time: 352 ms
+Conversion time: 8160 ms
+Aggregation time: 87 ms
+Total time: 8599 ms
+
+
+
+
+Testing with size 2^7 (128)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering time: 816 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 816 ms
+Decrypt result: 128
+Plain result: 128
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering time: 406 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 406 ms
+Decrypt result: 62
+Plain result: 62
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering time: 409 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 409 ms
+Decrypt result: 2
+Plain result: 2
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 128
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-24.0
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 5
+Encrypted query result: 5
+Filtering time: 610 ms
+Conversion time: 11172 ms
+Aggregation time: 93 ms
+Total time: 11875 ms
+
+
+
+
+Testing with size 2^8 (256)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering time: 1618 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 1618 ms
+Decrypt result: 256
+Plain result: 256
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering time: 907 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 907 ms
+Decrypt result: 123
+Plain result: 123
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering time: 776 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 776 ms
+Decrypt result: 3
+Plain result: 3
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 256
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.8
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 50
+Encrypted query result: 50
+Filtering time: 1350 ms
+Conversion time: 13939 ms
+Aggregation time: 108 ms
+Total time: 15397 ms
+
+
+
+
+Testing with size 2^9 (512)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering time: 2985 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 2985 ms
+Decrypt result: 512
+Plain result: 512
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering time: 1457 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 1457 ms
+Decrypt result: 246
+Plain result: 246
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering time: 1352 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 1352 ms
+Decrypt result: 6
+Plain result: 6
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 512
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.6
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 1244
+Encrypted query result: 1244
+Filtering time: 1793 ms
+Conversion time: 27920 ms
+Aggregation time: 105 ms
+Total time: 29818 ms
+
+
+
+
+Testing with size 2^10 (1024)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering time: 5972 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 5972 ms
+Decrypt result: 1023
+Plain result: 1023
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering time: 2813 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 2813 ms
+Decrypt result: 495
+Plain result: 495
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering time: 2712 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 2712 ms
+Decrypt result: 11
+Plain result: 11
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 1024
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.0
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 2840
+Encrypted query result: 2840
+Filtering time: 3579 ms
+Conversion time: 33085 ms
+Aggregation time: 123 ms
+Total time: 36787 ms
+
+
+
+
+Testing with size 2^11 (2048)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering time: 11150 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 11150 ms
+Decrypt result: 2048
+Plain result: 2048
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering time: 5316 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 5316 ms
+Decrypt result: 993
+Plain result: 993
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering time: 6806 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 6806 ms
+Decrypt result: 21
+Plain result: 21
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 2048
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.5
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 4629
+Encrypted query result: 4629
+Filtering time: 7385 ms
+Conversion time: 32411 ms
+Aggregation time: 128 ms
+Total time: 39924 ms
+
+
+
+
+Testing with size 2^12 (4096)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering time: 21965 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 21965 ms
+Decrypt result: 4096
+Plain result: 4096
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering time: 10609 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 10609 ms
+Decrypt result: 1978
+Plain result: 1978
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering time: 12068 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 12068 ms
+Decrypt result: 41
+Plain result: 41
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 4096
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-25.9
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 10047
+Encrypted query result: 10047
+Filtering time: 14520 ms
+Conversion time: 32334 ms
+Aggregation time: 131 ms
+Total time: 46985 ms
+
+
+
+
+Testing with size 2^13 (8192)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering time: 42807 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 42807 ms
+Decrypt result: 8191
+Plain result: 8191
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering time: 22978 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 22978 ms
+Decrypt result: 3980
+Plain result: 3980
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering time: 23177 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 23177 ms
+Decrypt result: 82
+Plain result: 82
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 8192
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.1
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 14692
+Encrypted query result: 14692
+Filtering time: 28034 ms
+Conversion time: 33341 ms
+Aggregation time: 146 ms
+Total time: 61521 ms
+
+
+
+
+Testing with size 2^14 (16384)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering time: 87204 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 87204 ms
+Decrypt result: 16383
+Plain result: 16383
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering time: 44406 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 44406 ms
+Decrypt result: 7982
+Plain result: 7982
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering time: 43868 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 43868 ms
+Decrypt result: 164
+Plain result: 164
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 16384
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.0
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 33657
+Encrypted query result: 33657
+Filtering time: 55963 ms
+Conversion time: 32510 ms
+Aggregation time: 141 ms
+Total time: 88614 ms
+
+
+
+
+Testing with size 2^15 (32768)
+Time-Series SQL Query1 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering time: 168632 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 168632 ms
+Decrypt result: 32765
+Plain result: 32765
+
+
+
+
+Time-Series SQL Query2 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering time: 86720 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 86720 ms
+Decrypt result: 15863
+Plain result: 15863
+
+
+
+
+Time-Series SQL Query3 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering time: 89215 ms
+Conversion time: 0 ms
+Aggregation time: 0 ms
+Total time: 89215 ms
+Decrypt result: 328
+Plain result: 328
+
+
+
+
+Time-Series SQL Query4 Test: 
+--------------------------------------------------------
+Records: 32768
+Filtering finish
+Aggregation :
+Generating Parameters...
+Generating Conversion Key...
+Starting Conversion...
+Repack average error = 0.000000 ~ 2^-26.0
+Aggregating price and discount ..
+Remian modulus: 2
+Plain_result: 66644
+Encrypted query result: 66644
+Filtering time: 110806 ms
+Conversion time: 32950 ms
+Aggregation time: 153 ms
+Total time: 143909 ms
+
+
+
+
+
+Performance Results (time in ms):
+    Size |    Operation |    Query 1 |    Query 2 |    Query 3 |    Query 4
+--------------------------------------------------------------------------------
+       1 |    Filtering |        249 |        169 |        164 |        185
+         |   Conversion |          0 |          0 |          0 |       6354
+         |  Aggregation |          0 |          0 |          0 |         44
+--------------------------------------------------------------------------------
+       2 |    Filtering |        335 |        154 |        135 |        181
+         |   Conversion |          0 |          0 |          0 |       6262
+         |  Aggregation |          0 |          0 |          0 |         52
+--------------------------------------------------------------------------------
+       4 |    Filtering |        332 |        134 |        133 |        177
+         |   Conversion |          0 |          0 |          0 |       6167
+         |  Aggregation |          0 |          0 |          0 |         60
+--------------------------------------------------------------------------------
+       8 |    Filtering |        328 |        132 |        132 |        176
+         |   Conversion |          0 |          0 |          0 |       6671
+         |  Aggregation |          0 |          0 |          0 |         67
+--------------------------------------------------------------------------------
+      16 |    Filtering |        326 |        131 |        132 |        191
+         |   Conversion |          0 |          0 |          0 |       6767
+         |  Aggregation |          0 |          0 |          0 |         73
+--------------------------------------------------------------------------------
+      32 |    Filtering |        330 |        426 |        145 |        386
+         |   Conversion |          0 |          0 |          0 |       7989
+         |  Aggregation |          0 |          0 |          0 |         80
+--------------------------------------------------------------------------------
+      64 |    Filtering |        582 |        673 |        261 |        352
+         |   Conversion |          0 |          0 |          0 |       8160
+         |  Aggregation |          0 |          0 |          0 |         87
+--------------------------------------------------------------------------------
+     128 |    Filtering |        816 |        406 |        409 |        610
+         |   Conversion |          0 |          0 |          0 |      11172
+         |  Aggregation |          0 |          0 |          0 |         93
+--------------------------------------------------------------------------------
+     256 |    Filtering |       1618 |        907 |        776 |       1350
+         |   Conversion |          0 |          0 |          0 |      13939
+         |  Aggregation |          0 |          0 |          0 |        108
+--------------------------------------------------------------------------------
+     512 |    Filtering |       2985 |       1457 |       1352 |       1793
+         |   Conversion |          0 |          0 |          0 |      27920
+         |  Aggregation |          0 |          0 |          0 |        105
+--------------------------------------------------------------------------------
+    1024 |    Filtering |       5972 |       2813 |       2712 |       3579
+         |   Conversion |          0 |          0 |          0 |      33085
+         |  Aggregation |          0 |          0 |          0 |        123
+--------------------------------------------------------------------------------
+    2048 |    Filtering |      11150 |       5316 |       6806 |       7385
+         |   Conversion |          0 |          0 |          0 |      32411
+         |  Aggregation |          0 |          0 |          0 |        128
+--------------------------------------------------------------------------------
+    4096 |    Filtering |      21965 |      10609 |      12068 |      14520
+         |   Conversion |          0 |          0 |          0 |      32334
+         |  Aggregation |          0 |          0 |          0 |        131
+--------------------------------------------------------------------------------
+    8192 |    Filtering |      42807 |      22978 |      23177 |      28034
+         |   Conversion |          0 |          0 |          0 |      33341
+         |  Aggregation |          0 |          0 |          0 |        146
+--------------------------------------------------------------------------------
+   16384 |    Filtering |      87204 |      44406 |      43868 |      55963
+         |   Conversion |          0 |          0 |          0 |      32510
+         |  Aggregation |          0 |          0 |          0 |        141
+--------------------------------------------------------------------------------
+   32768 |    Filtering |     168632 |      86720 |      89215 |     110806
+         |   Conversion |          0 |          0 |          0 |      32950
+         |  Aggregation |          0 |          0 |          0 |        153
+--------------------------------------------------------------------------------
