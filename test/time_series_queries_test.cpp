@@ -8,10 +8,19 @@
 #include <chrono>
 #include <omp.h>
 #include <unistd.h>
+#include <iomanip>
 
 using namespace arcedb;
 using namespace seal;
 
+struct QueryTime {
+    double filtering_time;
+    double conversion_time;
+    double aggregation_time;
+    
+    QueryTime(double f = 0, double c = 0, double a = 0) 
+        : filtering_time(f), conversion_time(c), aggregation_time(a) {}
+};
 
 /**
     SELECT COUNT(*) FROM MedicalHistory
@@ -21,8 +30,9 @@ using namespace seal;
         2021:07:01:00:00 AND 2021:08:01:00:00)
     @param[in] num The size of the database.
 */
-void time_series_query1(size_t num)
+QueryTime time_series_query1(size_t num)
 {
+    QueryTime times;
     std::cout << "Time-Series SQL Query1 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -87,7 +97,6 @@ void time_series_query1(size_t num)
     }
 
     std::chrono::system_clock::time_point start, end;
-    double query_time = 0;
     uint64_t query_res = 0;
     start = std::chrono::system_clock::now();
 
@@ -119,6 +128,7 @@ void time_series_query1(size_t num)
         
     }
     end = std::chrono::system_clock::now();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     count_res = aggregation_res[0];
     for (size_t i = 1; i < num; i++)
@@ -130,6 +140,11 @@ void time_series_query1(size_t num)
 
     }
     
+    // Conversion time
+    start = std::chrono::system_clock::now();
+    // 这里没有实际的转换操作，但为了保持一致性，我们仍然记录时间
+    end = std::chrono::system_clock::now();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     uint64_t plain_result = 0;
     for (size_t i = 0; i < num; i++)
@@ -147,10 +162,16 @@ void time_series_query1(size_t num)
 
     }
     
+    // Aggregation time
+    start = std::chrono::system_clock::now();
     query_res = tlweSymInt32Decrypt<Lvl2>(count_res, std::pow(2.,48), sk.key.get<Lvl2>());
+    end = std::chrono::system_clock::now();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     
-    query_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    std::cout << "Time: " << query_time << " ms" << std::endl;
+    std::cout << "Filtering time: " << times.filtering_time << " ms" << std::endl;
+    std::cout << "Conversion time: " << times.conversion_time << " ms" << std::endl;
+    std::cout << "Aggregation time: " << times.aggregation_time << " ms" << std::endl;
+    std::cout << "Total time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
     std::cout << "Decrypt result: " << query_res << std::endl;
     std::cout << "Plain result: " << plain_result << std::endl;
 
@@ -158,6 +179,8 @@ void time_series_query1(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
+    
+    return times;
 }
 
 /**
@@ -165,8 +188,9 @@ void time_series_query1(size_t num)
     WHERE glucose < 70 OR glucose > 100  AND time > 2023:12:01:00:00
     @param[in] num The size of the database.
 */
-void time_series_query2(size_t num)
+QueryTime time_series_query2(size_t num)
 {
+    QueryTime times;
     std::cout << "Time-Series SQL Query2 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -213,7 +237,6 @@ void time_series_query2(size_t num)
     }
 
     std::chrono::system_clock::time_point start, end;
-    double query_time = 0;
     start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
@@ -229,6 +252,7 @@ void time_series_query2(size_t num)
         
     }
     end = std::chrono::system_clock::now();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     count_res = aggregation_res[0];
     for (size_t i = 1; i < num; i++)
@@ -239,6 +263,12 @@ void time_series_query2(size_t num)
         }
 
     }
+
+    // Conversion time
+    start = std::chrono::system_clock::now();
+    // 这里没有实际的转换操作，但为了保持一致性，我们仍然记录时间
+    end = std::chrono::system_clock::now();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     uint64_t plain_result = 0;
     for (size_t i = 0; i < num; i++)
@@ -256,11 +286,16 @@ void time_series_query2(size_t num)
 
     }
     
-
+    // Aggregation time
+    start = std::chrono::system_clock::now();
     uint64_t query_res = tlweSymInt32Decrypt<Lvl2>(count_res, std::pow(2.,48), sk.key.get<Lvl2>());
-    query_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    end = std::chrono::system_clock::now();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-    std::cout << "Time: " << query_time << " ms" << std::endl;
+    std::cout << "Filtering time: " << times.filtering_time << " ms" << std::endl;
+    std::cout << "Conversion time: " << times.conversion_time << " ms" << std::endl;
+    std::cout << "Aggregation time: " << times.aggregation_time << " ms" << std::endl;
+    std::cout << "Total time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
     std::cout << "Decrypt result: " << query_res << std::endl;
     std::cout << "Plain result: " << plain_result << std::endl;
 
@@ -268,16 +303,18 @@ void time_series_query2(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
+    
+    return times;
 }
-
 
 /**
     SELECT COUNT(passenger_count) FROM passengers
     WHERE time = 2021:07:01:00:00 AND VecdorID = 2 AND RatecodeID = 2
     @param[in] num The size of the database.
 */
-void time_series_query3(size_t num)
+QueryTime time_series_query3(size_t num)
 {
+    QueryTime times;
     std::cout << "Time-Series SQL Query3 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -328,7 +365,6 @@ void time_series_query3(size_t num)
     }
 
     std::chrono::system_clock::time_point start, end;
-    double query_time = 0;
     start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
@@ -344,6 +380,7 @@ void time_series_query3(size_t num)
         
     }
     end = std::chrono::system_clock::now();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     count_res = aggregation_res[0];
     for (size_t i = 1; i < num; i++)
@@ -354,6 +391,12 @@ void time_series_query3(size_t num)
         }
 
     }
+
+    // Conversion time
+    start = std::chrono::system_clock::now();
+    // 这里没有实际的转换操作，但为了保持一致性，我们仍然记录时间
+    end = std::chrono::system_clock::now();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     uint64_t plain_result = 0;
     for (size_t i = 0; i < num; i++)
@@ -371,11 +414,16 @@ void time_series_query3(size_t num)
 
     }
     
-
+    // Aggregation time
+    start = std::chrono::system_clock::now();
     uint64_t query_res = tlweSymInt32Decrypt<Lvl2>(count_res, std::pow(2.,48), sk.key.get<Lvl2>());
-    query_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    end = std::chrono::system_clock::now();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-    std::cout << "Time: " << query_time << " ms" << std::endl;
+    std::cout << "Filtering time: " << times.filtering_time << " ms" << std::endl;
+    std::cout << "Conversion time: " << times.conversion_time << " ms" << std::endl;
+    std::cout << "Aggregation time: " << times.aggregation_time << " ms" << std::endl;
+    std::cout << "Total time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
     std::cout << "Decrypt result: " << query_res << std::endl;
     std::cout << "Plain result: " << plain_result << std::endl;
 
@@ -383,6 +431,8 @@ void time_series_query3(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
+    
+    return times;
 }
 
 /**
@@ -390,9 +440,9 @@ void time_series_query3(size_t num)
     WHERE (time BETWEEN 2016:01:01:00:00 AND 2016:01:03:00:00)
     @param[in] num The size of the database.
 */
-
-void time_series_query4(size_t num)
+QueryTime time_series_query4(size_t num)
 {
+    QueryTime times;
     std::cout << "Time-Series SQL Query4 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -444,7 +494,6 @@ void time_series_query4(size_t num)
     }
 
     std::chrono::system_clock::time_point start, end;
-    double filtering_time = 0, aggregation_time;
     start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
@@ -458,8 +507,7 @@ void time_series_query4(size_t num)
         
     }
     end = std::chrono::system_clock::now();
-
-    filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     std::vector<uint64_t> plain_filter_res(num);
     uint64_t plain_agg_res = 0;
@@ -527,7 +575,7 @@ void time_series_query4(size_t num)
     LWEsToRLWE(result, filter_res, pre_key, scale, std::pow(2., modq_bits), std::pow(2., modulus_bits - modq_bits), ckks_encoder, galois_keys, relin_keys, evaluator, context);
     HomRound(result, result.scale(), ckks_encoder, relin_keys, evaluator, decryptor, context);
     end = std::chrono::system_clock::now();
-    aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     seal::Plaintext plain;
     std::vector<double> computed(slots_count);
     decryptor.decrypt(result, plain);
@@ -565,27 +613,82 @@ void time_series_query4(size_t num)
         evaluator.add_inplace(result, temp);
     }
     end = std::chrono::system_clock::now();
-    aggregation_time += std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     std::vector<double> agg_result(slots_count);
     decryptor.decrypt(result, plain);
     seal::pack_decode(agg_result, plain, ckks_encoder);
 
     std::cout << "Plain_result: " << plain_agg_res << std::endl;
     std::cout << "Encrypted query result: " << std::round(agg_result[0]) << std::endl;
-    std::cout << "Time: " << filtering_time + aggregation_time << " ms" << std::endl;
+    std::cout << "Filtering time: " << times.filtering_time << " ms" << std::endl;
+    std::cout << "Conversion time: " << times.conversion_time << " ms" << std::endl;
+    std::cout << "Aggregation time: " << times.aggregation_time << " ms" << std::endl;
+    std::cout << "Total time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
 
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
+    
+    return times;
 }
 
 
 int main()
 {
-    size_t num = 32768;
-    time_series_query1(num);
-    time_series_query2(num);
-    time_series_query3(num);
-    time_series_query4(num);
+    std::vector<QueryTime> times_q1, times_q2, times_q3, times_q4;
+    
+    // 测试不同规模
+    for(int i = 0; i <= 15; i++) {
+        size_t num = 1 << i;
+        std::cout << "Testing with size 2^" << i << " (" << num << ")" << std::endl;
+        
+        times_q1.push_back(time_series_query1(num));
+        times_q2.push_back(time_series_query2(num));
+        times_q3.push_back(time_series_query3(num));
+        times_q4.push_back(time_series_query4(num));
+    }
+    
+    // 输出表格头
+    std::cout << "\nPerformance Results (time in ms):\n";
+    std::cout << std::setw(8) << "Size" << " | "
+              << std::setw(12) << "Operation" << " | "
+              << std::setw(10) << "Query 1" << " | "
+              << std::setw(10) << "Query 2" << " | "
+              << std::setw(10) << "Query 3" << " | "
+              << std::setw(10) << "Query 4" << std::endl;
+    std::cout << std::string(80, '-') << std::endl;
+    
+    // 输出每个规模的结果
+    for(int i = 0; i <= 15; i++) {
+        size_t num = 1 << i;
+        
+        // 输出过滤时间
+        std::cout << std::setw(8) << num << " | "
+                  << std::setw(12) << "Filtering" << " | "
+                  << std::setw(10) << times_q1[i].filtering_time << " | "
+                  << std::setw(10) << times_q2[i].filtering_time << " | "
+                  << std::setw(10) << times_q3[i].filtering_time << " | "
+                  << std::setw(10) << times_q4[i].filtering_time << std::endl;
+                  
+        // 输出转换时间
+        std::cout << std::setw(8) << "" << " | "
+                  << std::setw(12) << "Conversion" << " | "
+                  << std::setw(10) << times_q1[i].conversion_time << " | "
+                  << std::setw(10) << times_q2[i].conversion_time << " | "
+                  << std::setw(10) << times_q3[i].conversion_time << " | "
+                  << std::setw(10) << times_q4[i].conversion_time << std::endl;
+                  
+        // 输出聚合时间
+        std::cout << std::setw(8) << "" << " | "
+                  << std::setw(12) << "Aggregation" << " | "
+                  << std::setw(10) << times_q1[i].aggregation_time << " | "
+                  << std::setw(10) << times_q2[i].aggregation_time << " | "
+                  << std::setw(10) << times_q3[i].aggregation_time << " | "
+                  << std::setw(10) << times_q4[i].aggregation_time << std::endl;
+                  
+        std::cout << std::string(80, '-') << std::endl;
+    }
+    
+    return 0;
 }

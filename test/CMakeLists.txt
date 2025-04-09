@@ -13,3 +13,7 @@ target_link_libraries(time_series_queries_test ARCEDB)
 add_executable(relational_queries_test relational_queries_test.cpp )
 
 target_link_libraries(relational_queries_test ARCEDB)
+
+add_executable(query_multi_threads_test query_multi_threads_test.cpp)
+
+target_link_libraries(query_multi_threads_test ARCEDB)

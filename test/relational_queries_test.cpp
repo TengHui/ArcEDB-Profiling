@@ -13,6 +13,15 @@
 using namespace arcedb;
 using namespace seal;
 
+struct QueryTime {
+    double filtering_time;
+    double conversion_time;
+    double aggregation_time;
+    
+    QueryTime(double f = 0, double c = 0, double a = 0) 
+        : filtering_time(f), conversion_time(c), aggregation_time(a) {}
+};
+
 /***
  * TPC-H Query 1
     select
@@ -40,8 +49,9 @@ using namespace seal;
 
 */
 
-void relational_query1(size_t num)
+QueryTime relational_query1(size_t num)
 {
+    QueryTime times;
     std::cout << "Relational SQL Query1 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -107,9 +117,7 @@ void relational_query1(size_t num)
         exponent_encrypt<P>(linestatus[i], linestatus_ciphers[i], sk);
     }
 
-    std::chrono::system_clock::time_point start, end;
-    double filtering_time = 0, aggregation_time;
-    start = std::chrono::system_clock::now();
+    auto start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
     for (size_t i = 0; i < num; i++)
@@ -147,9 +155,9 @@ void relational_query1(size_t num)
         
     }
 
-    end = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
 
-    filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     std::vector<uint64_t> plain_filter_res_YY(num, 0), plain_filter_res_YN(num, 0), plain_filter_res_NY(num, 0), plain_filter_res_NN(num, 0);
     uint64_t plain_agg_res_YY = 0, plain_agg_res_YN = 0, plain_agg_res_NY = 0,plain_agg_res_NN = 0;
@@ -247,7 +255,7 @@ void relational_query1(size_t num)
     LWEsToRLWE(resultNN, filter_res_NN, pre_key, scale, std::pow(2., modq_bits), std::pow(2., modulus_bits - modq_bits), ckks_encoder, galois_keys, relin_keys, evaluator, context);
     HomRound(resultNN, resultNN.scale(), ckks_encoder, relin_keys, evaluator, decryptor, context);
     end = std::chrono::system_clock::now();
-    aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     seal::Plaintext plainYY, plainYN, plainNY, plainNN;
     std::vector<double> computedYY(slots_count), computedYN(slots_count), computedNY(slots_count), computedNN(slots_count);
     decryptor.decrypt(resultYY, plainYY);
@@ -350,7 +358,7 @@ void relational_query1(size_t num)
         evaluator.add_inplace(sum_qty_cipher_NN, temp);
     }
     end = std::chrono::system_clock::now();
-    aggregation_time += std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     std::vector<double> agg_resultYY(slots_count), agg_resultYN(slots_count), agg_resultNY(slots_count), agg_resultNN(slots_count);
     decryptor.decrypt(sum_qty_cipher_YY, plain);
     seal::pack_decode(agg_resultYY, plain, ckks_encoder);
@@ -365,7 +373,7 @@ void relational_query1(size_t num)
     seal::pack_decode(agg_resultNN, plain, ckks_encoder);
 
     std::cout << "--------------------------------------------------------"<< std::endl;
-    std::cout << "Query Evaluation Time: " << filtering_time + aggregation_time << " ms" << std::endl;
+    std::cout << "Query Evaluation Time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
 
     std::cout << "Encrypted query result: " << std::endl;
     std::cout << std::setw(16) <<"returnfalg" << "|" << std::setw(16) << "linestatus" << "|" << std::setw(16) << "sum_qty" << std::endl;
@@ -386,8 +394,7 @@ void relational_query1(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
     
-    
-    
+    return times;
 }
 
 /***
@@ -405,8 +412,9 @@ void relational_query1(size_t num)
     consider data \in [10592~10957]
 */
 
-void relational_query6(size_t num)
+QueryTime relational_query6(size_t num)
 {
+    QueryTime times;
     std::cout << "Relational SQL Query6 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -464,9 +472,7 @@ void relational_query6(size_t num)
         exponent_encrypt<P>(quantity[i], 16, quantity_ciphers[i], sk);
     }
 
-    std::chrono::system_clock::time_point start, end;
-    double filtering_time = 0, aggregation_time;
-    start = std::chrono::system_clock::now();
+    auto start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
     for (size_t i = 0; i < num; i++)
@@ -484,9 +490,9 @@ void relational_query6(size_t num)
         lift_and_and(filter_res[i], pre_res, filter_res[i], 29, ek, sk);
         
     }
-    end = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
 
-    filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     std::vector<uint64_t> plain_filter_res(num);
     uint64_t plain_agg_res = 0;
@@ -554,7 +560,7 @@ void relational_query6(size_t num)
     LWEsToRLWE(result, filter_res, pre_key, scale, std::pow(2., modq_bits), std::pow(2., modulus_bits - modq_bits), ckks_encoder, galois_keys, relin_keys, evaluator, context);
     HomRound(result, result.scale(), ckks_encoder, relin_keys, evaluator, decryptor, context);
     end = std::chrono::system_clock::now();
-    aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     seal::Plaintext plain;
     std::vector<double> computed(slots_count);
     decryptor.decrypt(result, plain);
@@ -592,12 +598,12 @@ void relational_query6(size_t num)
         evaluator.add_inplace(result, temp);
     }
     end = std::chrono::system_clock::now();
-    aggregation_time += std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     std::vector<double> agg_result(slots_count);
     decryptor.decrypt(result, plain);
     seal::pack_decode(agg_result, plain, ckks_encoder);
 
-    std::cout << "Query Evaluation Time: " << filtering_time + aggregation_time << " ms" << std::endl;
+    std::cout << "Query Evaluation Time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
 
     std::cout << "Encrypted query result: " << std::endl;
     std::cout << std::setw(12) <<"revenue" << std::endl;
@@ -611,6 +617,7 @@ void relational_query6(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
 
+    return times;
 }
 
 
@@ -646,8 +653,9 @@ void relational_query6(size_t num)
         l_shipmode;
     Consider the joined table
 */
-void relational_query12(size_t num)
+QueryTime relational_query12(size_t num)
 {
+    QueryTime times;
     std::cout << "Relational SQL Query12 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
@@ -712,9 +720,7 @@ void relational_query12(size_t num)
         exponent_encrypt_rgsw<P>(commitdate[i], 16, commitdate_rgsw_ciphers[i], sk, true);
     }
 
-    std::chrono::system_clock::time_point start, end;
-    double filtering_time = 0, aggregation_time;
-    start = std::chrono::system_clock::now();
+    auto start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
     for (size_t i = 0; i < num; i++)
@@ -768,9 +774,9 @@ void relational_query12(size_t num)
         }
     }
     
-    end = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
 
-    filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     std::vector<uint64_t> plain_filter_res_mail(num, 0), plain_filter_res_ship(num, 0), plain_filter_order(num, 0);
     std::vector<uint64_t> plain_res_mail_order(num, 0), plain_res_ship_order(num, 0);
@@ -822,7 +828,7 @@ void relational_query12(size_t num)
     uint64_t query_res_mail_order = tlweSymInt32Decrypt<Lvl2>(agg_mail_order, std::pow(2.,48), sk.key.get<Lvl2>());
     uint64_t query_res_ship_order = tlweSymInt32Decrypt<Lvl2>(agg_ship_order, std::pow(2.,48), sk.key.get<Lvl2>());
 
-    std::cout << "Query Evaluation Time: " << filtering_time << " ms" << std::endl;
+    std::cout << "Query Evaluation Time: " << times.filtering_time << " ms" << std::endl;
     std::cout << "Encrypted result: " << std::endl;
     std::cout << std::setw(12) <<"shipmode" << "|" << std::setw(16) << "high_line_count" << "|" << std::setw(16) << "low_line_count" << std::endl;
     std::cout << std::setw(12) <<"MAIL" << "|" << std::setw(16) << query_res_mail_order << "|" << std::setw(16) << query_res_mail - query_res_mail_order << std::endl;
@@ -838,6 +844,7 @@ void relational_query12(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
 
+    return times;
 }
 
 /*
@@ -856,9 +863,10 @@ void relational_query12(size_t num)
         and l_shipdate < date ':1' + interval '1' month;
     Consider the joined table
 */
-void relational_query14(size_t num)
+QueryTime relational_query14(size_t num)
 {
-        std::cout << "Relational SQL Query14 Test: "<< std::endl;
+    QueryTime times;
+    std::cout << "Relational SQL Query14 Test: "<< std::endl;
     std::cout << "--------------------------------------------------------"<< std::endl;
     std::cout << "Records: " << num << std::endl;
     std::random_device seed_gen;
@@ -914,9 +922,7 @@ void relational_query14(size_t num)
         exponent_encrypt<P>(ptype[i], ptype_ciphers[i], sk);
     }
 
-    std::chrono::system_clock::time_point start, end;
-    double filtering_time = 0, aggregation_time;
-    start = std::chrono::system_clock::now();
+    auto start = std::chrono::system_clock::now();
 
     #pragma omp parallel for num_threads(48)
     for (size_t i = 0; i < num; i++)
@@ -933,9 +939,9 @@ void relational_query14(size_t num)
         lift_and_and(filter_res[i], filter_res[i], filter_res[i], 29, ek, sk);
         
     }
-    end = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
 
-    filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.filtering_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     std::vector<uint64_t> plain_filter_res(num), plain_filter_case_res(num);
     uint64_t plain_agg_res = 0, plain_agg_case_res = 0;
@@ -1017,7 +1023,7 @@ void relational_query14(size_t num)
     LWEsToRLWE(result_case, filter_case_res, pre_key, scale, std::pow(2., modq_bits), std::pow(2., modulus_bits - modq_bits), ckks_encoder, galois_keys, relin_keys, evaluator, context);
     HomRound(result_case, result_case.scale(), ckks_encoder, relin_keys, evaluator, decryptor, context);
     end = std::chrono::system_clock::now();
-    aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.conversion_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     seal::Plaintext plain;
     std::vector<double> computed(slots_count), computed_case(slots_count);
     decryptor.decrypt(result, plain);
@@ -1067,7 +1073,7 @@ void relational_query14(size_t num)
         evaluator.add_inplace(result_case, temp);
     }
     end = std::chrono::system_clock::now();
-    aggregation_time += std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    times.aggregation_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     std::vector<double> agg_result(slots_count), agg_case_result(slots_count);
     decryptor.decrypt(result, plain);
     seal::pack_decode(agg_result, plain, ckks_encoder);
@@ -1075,7 +1081,7 @@ void relational_query14(size_t num)
     decryptor.decrypt(result_case, plain);
     seal::pack_decode(agg_case_result, plain, ckks_encoder);
 
-    std::cout << "Query Evaluation Time: " << filtering_time + aggregation_time << " ms" << std::endl;
+    std::cout << "Query Evaluation Time: " << times.filtering_time + times.conversion_time + times.aggregation_time << " ms" << std::endl;
 
     std::cout << "Encrypted query result: " << std::endl;
     std::cout << std::setw(12) <<"promo_revenue" << std::endl;
@@ -1089,17 +1095,68 @@ void relational_query14(size_t num)
     std::cout << std::endl;
     std::cout << std::endl;
     
+    return times;
 }
 
 
 
 int main()
 {
-    size_t num = 32768;
-    relational_query1(num);
-    relational_query6(num);
-    relational_query12(num);
-    relational_query14(num);
+    std::vector<QueryTime> times_q1, times_q6, times_q12, times_q14;
+    
+    // 测试不同规模
+    for(int i = 0; i <= 15; i++) {
+        size_t num = 1 << i;
+        std::cout << "Testing with size 2^" << i << " (" << num << ")" << std::endl;
+        
+        times_q1.push_back(relational_query1(num));
+        times_q6.push_back(relational_query6(num));
+        times_q12.push_back(relational_query12(num));
+        times_q14.push_back(relational_query14(num));
+    }
+    
+    // 输出表格头
+    std::cout << "\nPerformance Results (time in ms):\n";
+    std::cout << std::setw(8) << "Size" << " | "
+              << std::setw(12) << "Operation" << " | "
+              << std::setw(10) << "Query 1" << " | "
+              << std::setw(10) << "Query 6" << " | "
+              << std::setw(10) << "Query 12" << " | "
+              << std::setw(10) << "Query 14" << std::endl;
+    std::cout << std::string(80, '-') << std::endl;
+    
+    // 输出每个规模的结果
+    for(int i = 0; i <= 15; i++) {
+        size_t num = 1 << i;
+        
+        // 输出过滤时间
+        std::cout << std::setw(8) << num << " | "
+                  << std::setw(12) << "Filtering" << " | "
+                  << std::setw(10) << times_q1[i].filtering_time << " | "
+                  << std::setw(10) << times_q6[i].filtering_time << " | "
+                  << std::setw(10) << times_q12[i].filtering_time << " | "
+                  << std::setw(10) << times_q14[i].filtering_time << std::endl;
+                  
+        // 输出转换时间
+        std::cout << std::setw(8) << "" << " | "
+                  << std::setw(12) << "Conversion" << " | "
+                  << std::setw(10) << times_q1[i].conversion_time << " | "
+                  << std::setw(10) << times_q6[i].conversion_time << " | "
+                  << std::setw(10) << times_q12[i].conversion_time << " | "
+                  << std::setw(10) << times_q14[i].conversion_time << std::endl;
+                  
+        // 输出聚合时间
+        std::cout << std::setw(8) << "" << " | "
+                  << std::setw(12) << "Aggregation" << " | "
+                  << std::setw(10) << times_q1[i].aggregation_time << " | "
+                  << std::setw(10) << times_q6[i].aggregation_time << " | "
+                  << std::setw(10) << times_q12[i].aggregation_time << " | "
+                  << std::setw(10) << times_q14[i].aggregation_time << std::endl;
+                  
+        std::cout << std::string(80, '-') << std::endl;
+    }
+    
+    return 0;
 }
 
 
