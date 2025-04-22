@@ -32,25 +32,25 @@ namespace arcedb
             
         }
 
-        std::string filename = "../data/UMatrix_" + std::to_string(coeff_count) + ".txt";
-        std::ofstream outFile(filename);
-        if (outFile.is_open()) 
-        {
-            for (const auto& row : matrix)
-            {
-                for (uint64_t value : row) 
-                {
-                    outFile << value << ' ';
-                }
-                outFile << '\n';
-            }
-            outFile.close();
-            std::cout << "Data has been written to the file.\n";
-        } 
-        else 
-        {
-            throw std::invalid_argument("Unable to open the file for writing.");
-        }
+        // std::string filename = "../data/UMatrix_" + std::to_string(coeff_count) + ".txt";
+        // std::ofstream outFile(filename);
+        // if (outFile.is_open()) 
+        // {
+        //     for (const auto& row : matrix)
+        //     {
+        //         for (uint64_t value : row) 
+        //         {
+        //             outFile << value << ' ';
+        //         }
+        //         outFile << '\n';
+        //     }
+        //     outFile.close();
+        //     std::cout << "Data has been written to the file.\n";
+        // } 
+        // else 
+        // {
+        //     throw std::invalid_argument("Unable to open the file for writing.");
+        // }
         
         
     }
@@ -562,6 +562,7 @@ namespace arcedb
         size_t lwe_n = lwe_ciphers[0].poly_modulus_degree();
         std::vector<std::vector<uint64_t>> A(lwe_ciphers_size);
         std::vector<uint64_t> b(lwe_ciphers_size);
+        // std::cout << "1" << std::endl;
         for (size_t i = 0; i < lwe_ciphers_size; i++)
         {
             A[i].resize(lwe_n);
@@ -571,10 +572,13 @@ namespace arcedb
             }
             b[i] = *lwe_ciphers[i].dataB();
         }
+        // std::cout << "2" << std::endl;
         LinearTransform(middle_result, A, eval_key, context, batch_encoder, galois_keys, evaluator);
+        // std::cout << "3" << std::endl;
         Plaintext b_plain;
         batch_encoder.encode(b, b_plain);
         evaluator.add_plain_inplace(middle_result, b_plain);
+        // std::cout << "4" << std::endl;
     }
 
 

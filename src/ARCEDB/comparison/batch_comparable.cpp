@@ -1,4 +1,3 @@
-
 #include "batch_comparable.h"
 
 namespace arcedb
@@ -58,6 +57,8 @@ namespace arcedb
                                     seal::SEALContext &context, seal::Evaluator &evaluator, seal::Decryptor &decryptor)
     {
         using namespace seal;
+        std::chrono::system_clock::time_point start, end;
+        double compare_time;
 
         size_t cipher_size = cipher1.size();
         destination.resize(cipher_size);
@@ -76,6 +77,9 @@ namespace arcedb
 
         seal::Ciphertext compare_result_low, is_equal_ciphertext, compare_result_high, rlwe_result;
 
+        std::cout << "<<<<<<======Batch Compare Start======>>>>>>" << std::endl;
+        std::cout << "SIMD HCMP Nums: " << 2*cipher_size << std::endl;
+        start = std::chrono::system_clock::now();
         for (size_t i = 0; i < cipher_size; i++)
         {
             // get compare_result_low = a0 > b0 (0 or q/4)
@@ -101,7 +105,11 @@ namespace arcedb
             evaluator.mod_switch_to_next_inplace(rlwe_result);
             destination[i].extract(context, rlwe_result, 0);
         }
-
+        end = std::chrono::system_clock::now();
+        compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+        std::cout << "Comparing " << cipher_size << " ciphertexts takes " << compare_time << " μs"<< std::endl;
+        std::cout << "The amortized compare time is: " << compare_time / (cipher_size) << " μs" << std::endl;
+        std::cout << "<<<<<<======Batch Compare End======>>>>>>" << std::endl;
     }
 
     void simd_greater_than(std::vector<ComparableCipher> &cipher1, std::vector<ComparableRGSWCipher> &cipher2, size_t modular_size, 
@@ -321,15 +329,16 @@ namespace arcedb
         size_t lwe_poly_modulus_degree = lwe_parms.poly_modulus_degree();
         std::chrono::system_clock::time_point start, end;
         double compare_time;
+        std::cout << "<<<<<<======Batch Bootstrapping Start======>>>>>>" << std::endl;
         // As + b 
         Ciphertext asb_cipher;
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             As_plus_b(input_cipher, asb_cipher, eval_key, rlwe_context, rlwe_batch_encoder, rlwe_galois_keys, rlwe_evaluator);
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "As_plus_b time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "As_plus_b time: " << compare_time << " μs" << std::endl;
         }
         catch(const std::exception& e)
         {
@@ -337,8 +346,6 @@ namespace arcedb
             std::cerr << e.what() << '\n';
         }
         
-        
-
 
         // reset
         Plaintext offset_plain(rlwe_poly_modulus_degree);
@@ -348,11 +355,11 @@ namespace arcedb
         Ciphertext poly_cipher;
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             compute_mux_poly(asb_cipher, rlwe_mux_poly, poly_cipher, rlwe_context, rlwe_evaluator, rlwe_relin_keys, rlwe_encryptor, rlwe_decryptor, rlwe_batch_encoder);
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "mux_poly time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "mux_poly time: " << compare_time << " μs" << std::endl;
             
         }
         catch(const std::exception& e)
@@ -368,11 +375,11 @@ namespace arcedb
 
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             slot_to_coeff_optimized(poly_cipher, coeff_cipher, pre_plains, rlwe_galois_keys, rlwe_evaluator);
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "Slot-to-coeff time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "Slot-to-coeff time: " << compare_time << " μs" << std::endl;
             
         }
         catch(const std::exception& e)
@@ -388,11 +395,11 @@ namespace arcedb
         util::RNSIter ct_a(cipher_copy.data(1), rlwe_poly_modulus_degree);
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             rlwe_evaluator.switch_key_inplace(coeff_cipher, ct_a, static_cast<const KSwitchKeys &>(rlwe_key_switch_key), 0);
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "switch_key_inplace time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "switch_key_inplace time: " << compare_time << " μs" << std::endl;
             
         }
         catch(const std::exception& e)
@@ -410,11 +417,11 @@ namespace arcedb
         seal::Modulus last_modulus = rlwe_parms.coeff_modulus()[0];
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             modulus_switching_inplace(modulus_switching_cipher, last_modulus, lwe_coeff_modulus[0]);
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "modulus_switching_inplace time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "modulus_switching_inplace time: " << compare_time << " μs" << std::endl;
             
         }
         catch(const std::exception& e)
@@ -428,7 +435,7 @@ namespace arcedb
         LWECiphertext temp;
         try
         {
-            // start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             for (size_t i = 0; i < cipher_size; i++)
             {
                 sample_extract(modulus_switching_cipher, temp, i, lwe_coeff_modulus[0]);
@@ -437,9 +444,9 @@ namespace arcedb
                 *(output_cipher[i].dataB()) = *(temp.dataB());
                 std::copy_n(temp.dataA(), lwe_poly_modulus_degree, output_cipher[i].dataA());
             }
-            // end = std::chrono::system_clock::now();
-            // compare_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-            // std::cout << "sample_extract time: " << compare_time << std::endl;
+            end = std::chrono::system_clock::now();
+            compare_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            std::cout << "sample_extract time: " << compare_time << " μs" << std::endl;
             
         }
         catch(const std::exception& e)
@@ -447,7 +454,7 @@ namespace arcedb
             std::cout << "Location: " << __FILE__ << ":" << __LINE__ << " (" << __func__ << ")\n";
             std::cerr << e.what() << '\n';
         }
-        
+        std::cout << "<<<<<<======Batch Bootstrapping End======>>>>>>" << std::endl;
         
     }
 

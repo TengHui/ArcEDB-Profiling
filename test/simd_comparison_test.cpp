@@ -13,7 +13,7 @@ using namespace seal;
 using namespace arcedb;
 
 
-void compare_batch_16_test()
+void compare_batch_16_test(uint64_t num)
 {
     std::cout << "------------------------------------------------" << std::endl;
     std::cout << "16-bit precision comparison operator SIMDArbHCMP" << std::endl;
@@ -38,8 +38,10 @@ void compare_batch_16_test()
 
     std::uniform_int_distribution<uint64_t> lwe_message_1(0, lwe_poly_modulus_degree - 1);
     std::uniform_int_distribution<uint64_t> lwe_message_2(1, lwe_poly_modulus_degree - 1);
-    
-    uint64_t num = 32768;
+
+    // std::cout << "1" << std::endl;
+
+    // uint64_t num = 32768;
     std::vector<ComparableCipher> cipher1(num);
     std::vector<ComparableRGSWCipher> cipher2(num);
     std::vector<uint64_t> linear_result_values(num);
@@ -62,6 +64,7 @@ void compare_batch_16_test()
         comparable_rgsw_encrypt(value21 + value22 * lwe_poly_modulus_degree, cipher2[i], true, lwe_encryptor, lwe_secret_key, lwe_context);
     }
     
+    // std::cout << "2" << std::endl;
     // Batch Bootstrap
 
     size_t rlwe_poly_modulus_degree = 32768;
@@ -82,16 +85,22 @@ void compare_batch_16_test()
     Decryptor rlwe_decryptor(rlwe_context, rlwe_secret_key);
     BatchEncoder rlwe_batch_encoder(rlwe_context);
 
+    // std::cout << "3" << std::endl;
+
     // Linear Transform key generate
     LinearTransformKey eval_key;
     std::vector<int64_t> lwe_key_values;
     convert_secert_key(lwe_secret_key, lwe_context, lwe_key_values);
     generate_linear_transform_key(eval_key, lwe_key_values, rlwe_secret_key, rlwe_context, rlwe_batch_encoder, rlwe_encryptor, rlwe_evaluator);
 
+    // std::cout << "4" << std::endl;
+
     std::vector<std::vector<uint64_t>> matrix;
     generate_slot_to_coeff_matrix(matrix, rlwe_context, rlwe_batch_encoder);
     // read_slot_to_coeff_matrix(matrix, rlwe_batch_encoder);
     std::vector<std::vector<Plaintext>> pre_plains;
+
+    // std::cout << "5" << std::endl;
 
     auto context_data = rlwe_context.first_context_data();
     while (context_data)
@@ -102,21 +111,25 @@ void compare_batch_16_test()
         }
         context_data = context_data->next_context_data();
     }
-    generate_slot_to_coeff_plain(context_data->parms_id(), matrix, pre_plains, rlwe_context, rlwe_batch_encoder, rlwe_evaluator);
+    // std::cout << "6" << std::endl;
+    try {
+        generate_slot_to_coeff_plain(context_data->parms_id(), matrix, pre_plains, rlwe_context, rlwe_batch_encoder, rlwe_evaluator);
+        std::cout << "generate_slot_to_coeff_plain passed" << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Error in generate_slot_to_coeff_plain: " << e.what() << std::endl;
+        return;
+    }
     matrix.clear();
 
 
     SecretKey pad_lwe_secret_key;
     KSwitchKeys rlwe_keys_switch_key;
-    try
-    {
+    try {
         generate_key_switch_key(lwe_secret_key, lwe_context, rlwe_secret_key, rlwe_context, pad_lwe_secret_key, rlwe_keys_switch_key);
-        std::cout << "generate_key_switch_key passed" <<std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "Location: " << __FILE__ << ":" << __LINE__ << " (" << __func__ << ")\n";
-        std::cerr << e.what() << '\n';
+        std::cout << "generate_key_switch_key passed" << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Error in generate_key_switch_key: " << e.what() << std::endl;
+        return; 
     }
 
     
@@ -156,6 +169,11 @@ void compare_batch_16_test()
 
 int main()
 {
-    compare_batch_16_test();
+    uint64_t num;
+    for(int i = 12; i <= 12; i++) {
+        num = 1 << i;
+        std::cout << "<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^" << i << " (" << num << ")==========>>>>>>>>>>>>>>>>>>>>" << std::endl;
+        compare_batch_16_test(num);
+    }
     return 0;
 }

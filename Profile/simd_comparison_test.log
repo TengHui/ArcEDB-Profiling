@@ -1,0 +1,388 @@
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^0 (1)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 2
+Comparing 1 ciphertexts takes 2152 μs
+The amortized compare time is: 2152 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 709830 μs
+mux_poly time: 8.55195e+07 μs
+Slot-to-coeff time: 2.53353e+07 μs
+switch_key_inplace time: 6690 μs
+modulus_switching_inplace time: 210 μs
+sample_extract time: 133 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 1 ciphertexts takes 132302 ms
+The amortized compare time is: 4.03754
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^1 (2)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 4
+Comparing 2 ciphertexts takes 3671 μs
+The amortized compare time is: 1835.5 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 651686 μs
+mux_poly time: 8.55909e+07 μs
+Slot-to-coeff time: 2.53183e+07 μs
+switch_key_inplace time: 6657 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 173 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 2 ciphertexts takes 134538 ms
+The amortized compare time is: 4.10577
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^2 (4)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 8
+Comparing 4 ciphertexts takes 6706 μs
+The amortized compare time is: 1676.5 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 667678 μs
+mux_poly time: 9.60776e+07 μs
+Slot-to-coeff time: 2.61637e+07 μs
+switch_key_inplace time: 6723 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 257 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 4 ciphertexts takes 144902 ms
+The amortized compare time is: 4.42206
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^3 (8)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 16
+Comparing 8 ciphertexts takes 13748 μs
+The amortized compare time is: 1718.5 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 778818 μs
+mux_poly time: 8.51249e+07 μs
+Slot-to-coeff time: 2.55077e+07 μs
+switch_key_inplace time: 6628 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 416 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 8 ciphertexts takes 134787 ms
+The amortized compare time is: 4.11337
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^4 (16)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 32
+Comparing 16 ciphertexts takes 40838 μs
+The amortized compare time is: 2552.38 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 1.10142e+06 μs
+mux_poly time: 1.02814e+08 μs
+Slot-to-coeff time: 2.92514e+07 μs
+switch_key_inplace time: 11379 μs
+modulus_switching_inplace time: 362 μs
+sample_extract time: 938 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 16 ciphertexts takes 156614 ms
+The amortized compare time is: 4.77948
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^5 (32)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 64
+Comparing 32 ciphertexts takes 53633 μs
+The amortized compare time is: 1676.03 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 1.51978e+06 μs
+mux_poly time: 1.02946e+08 μs
+Slot-to-coeff time: 2.97115e+07 μs
+switch_key_inplace time: 11183 μs
+modulus_switching_inplace time: 289 μs
+sample_extract time: 1744 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 32 ciphertexts takes 160743 ms
+The amortized compare time is: 4.90549
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^6 (64)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 128
+Comparing 64 ciphertexts takes 120196 μs
+The amortized compare time is: 1878.06 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 1.35904e+06 μs
+mux_poly time: 9.18348e+07 μs
+Slot-to-coeff time: 2.59375e+07 μs
+switch_key_inplace time: 7367 μs
+modulus_switching_inplace time: 244 μs
+sample_extract time: 2987 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 64 ciphertexts takes 146147 ms
+The amortized compare time is: 4.46005
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^7 (128)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 256
+Comparing 128 ciphertexts takes 230060 μs
+The amortized compare time is: 1797.34 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 1.91616e+06 μs
+mux_poly time: 8.54624e+07 μs
+Slot-to-coeff time: 2.50752e+07 μs
+switch_key_inplace time: 6661 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 5368 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 128 ciphertexts takes 134078 ms
+The amortized compare time is: 4.09174
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^8 (256)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 512
+Comparing 256 ciphertexts takes 437197 μs
+The amortized compare time is: 1707.8 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 2.633e+06 μs
+mux_poly time: 8.56489e+07 μs
+Slot-to-coeff time: 2.5042e+07 μs
+switch_key_inplace time: 6622 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 10780 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 256 ciphertexts takes 135710 ms
+The amortized compare time is: 4.14154
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^9 (512)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 1024
+Comparing 512 ciphertexts takes 886766 μs
+The amortized compare time is: 1731.96 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 6.1025e+06 μs
+mux_poly time: 8.52441e+07 μs
+Slot-to-coeff time: 2.46793e+07 μs
+switch_key_inplace time: 6655 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 21420 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 512 ciphertexts takes 140886 ms
+The amortized compare time is: 4.2995
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^10 (1024)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 2048
+Comparing 1024 ciphertexts takes 1.71168e+06 μs
+The amortized compare time is: 1671.56 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 7.27924e+06 μs
+mux_poly time: 8.48029e+07 μs
+Slot-to-coeff time: 2.49506e+07 μs
+switch_key_inplace time: 6687 μs
+modulus_switching_inplace time: 205 μs
+sample_extract time: 42966 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 1024 ciphertexts takes 139710 ms
+The amortized compare time is: 4.26361
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^11 (2048)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 4096
+Comparing 2048 ciphertexts takes 3.3921e+06 μs
+The amortized compare time is: 1656.3 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 1.62411e+07 μs
+mux_poly time: 8.49477e+07 μs
+Slot-to-coeff time: 2.48416e+07 μs
+switch_key_inplace time: 6653 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 85521 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 2048 ciphertexts takes 153163 ms
+The amortized compare time is: 4.67416
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^12 (4096)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 8192
+Comparing 4096 ciphertexts takes 6.50276e+06 μs
+The amortized compare time is: 1587.59 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^13 (8192)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 16384
+Comparing 8192 ciphertexts takes 1.67208e+07 μs
+The amortized compare time is: 2041.11 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 2.59309e+07 μs
+mux_poly time: 8.83099e+07 μs
+Slot-to-coeff time: 2.49454e+07 μs
+switch_key_inplace time: 7801 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 351967 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 8192 ciphertexts takes 184852 ms
+The amortized compare time is: 5.64124
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^14 (16384)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 32768
+Comparing 16384 ciphertexts takes 3.19342e+07 μs
+The amortized compare time is: 1949.11 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 3.47462e+07 μs
+mux_poly time: 1.05009e+08 μs
+Slot-to-coeff time: 3.00713e+07 μs
+switch_key_inplace time: 6960 μs
+modulus_switching_inplace time: 206 μs
+sample_extract time: 671291 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 16384 ciphertexts takes 229876 ms
+The amortized compare time is: 7.01526
+Comparison passed
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<==========Testing with size 2^15 (32768)==========>>>>>>>>>>>>>>>>>>>>
+------------------------------------------------
+16-bit precision comparison operator SIMDArbHCMP
+generate_slot_to_coeff_plain passed
+generate_key_switch_key passed
+<<<<<<======Batch Compare Start======>>>>>>
+SIMD HCMP Nums: 65536
+Comparing 32768 ciphertexts takes 5.86249e+07 μs
+The amortized compare time is: 1789.09 μs
+<<<<<<======Batch Compare End======>>>>>>
+<<<<<<======Batch Bootstrapping Start======>>>>>>
+As_plus_b time: 3.41427e+07 μs
+mux_poly time: 1.01748e+08 μs
+Slot-to-coeff time: 2.58777e+07 μs
+switch_key_inplace time: 6646 μs
+modulus_switching_inplace time: 205 μs
+sample_extract time: 1.1587e+06 μs
+<<<<<<======Batch Bootstrapping End======>>>>>>
+Comparing 32768 ciphertexts takes 248398 ms
+The amortized compare time is: 7.58051
+Comparison passed
